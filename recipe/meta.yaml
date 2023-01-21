@@ -1,5 +1,5 @@
 {% set name = "pyctcdecode" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyctcdecode-{{ version }}.tar.gz
-  sha256: 7ccf1d735adddefc64202478391d55651c63c3e82d71a2e326122090db5050bb
+  sha256: f3bcb313e43ca16a54938b3e77b0b375328653bba932668243db745fde513a2c
 
 build:
   number: 0
