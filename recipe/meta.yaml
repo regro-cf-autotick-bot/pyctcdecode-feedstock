@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyctcdecode-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyctcdecode-{{ version }}.tar.gz
   sha256: f3bcb313e43ca16a54938b3e77b0b375328653bba932668243db745fde513a2c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - hypothesis >=6.14,<7
     - numpy >=1.15.0,<2.0.0
     - pygtrie >=2.1,<3.0
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/kensho-technologies/pyctcdecode
